@@ -1,0 +1,22 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.2.1
+env:
+  global:
+    - RACK_ENV=test
+branches:
+  only:
+    - master
+install:
+  - bundle install
+before_script:
+  - ./scripts/beforescript.sh
+script:
+  - rake test --trace
+deploy:
+  provider: heroku
+  api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
+  app: cobra-traffic
+  skip_cleanup: true
+  run: "rake db:migrate"
