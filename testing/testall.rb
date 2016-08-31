@@ -2,7 +2,7 @@ require "test/unit"
 require 'rack/test'
 require_relative '../frontend/main'
 
-class TestVersion < Test::Unit::TestCase
+class TestAll < Test::Unit::TestCase
   include Rack::Test::Methods
   # self.test_order = :defined
   

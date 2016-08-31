@@ -55,44 +55,56 @@ post '/auth/v1/local' do
     # TODO: Verify login credentials and authenticiate user.
     redirect '/data'
 end
-get '/data/zones' do
+get '/data/sites' do
+    # TODO: Fetch all sites from DB.
+end
+get '/data/:site' do
+    # TODO: Fetch site status from DB.
+    slim :status_site
+end
+get '/data/:site/zones' do
     # TODO: Fetch all zones from DB.
     slim :list_zones
 end
-get '/data/:zone/lots' do
+get '/data/:site/:zone/lots' do
     slim :list_lots
 end
-get '/data/:zone' do
+get '/data/:site/:zone' do
     slim :status_zone
 end
-get '/data/:zone/:lot' do
+get '/data/:site/:zone/:lot' do
     slim :status_lot
 end
 get '/data' do
-    slim :status_all
+    redirect '/data/sites'
 end
-#######################################################
-# API endpoints for embedded data collection devices. #
-#######################################################
+###################################################################
+# API endpoints for embedded data collection and display devices. #
+###################################################################
 ##
 # API endpoint for dumb data collection endpoints recording inbound vehicles.
-get '/api/v1/flow/inbound/raw/:zone/:lot' do
+get '/api/v1/flow/inbound/raw/:site/:zone/:lot' do
     
 end
 ##
 # API endpoint for dumb data collection endpoints recording outbound vehicles.
-get '/api/v1/flow/outbound/raw/:zone/:lot' do
+get '/api/v1/flow/outbound/raw/:site/:zone/:lot' do
     
 end
 ##
 # API endpoint for smart data collection endpoints recording inbound tagged vehicles.
-get '/api/v1/flow/inbound/marked/:zone/:lot/:vhid' do
+get '/api/v1/flow/inbound/marked/:site/:zone/:lot/:vhid' do
     
 end
 ##
 # API endpoint for smart data collection endpoints recording outbound tagged vehicles.
-get '/api/v1/flow/outbound/marked/:zone/:lot/:vhid' do
+get '/api/v1/flow/outbound/marked/:site/:zone/:lot/:vhid' do
     
+end
+##
+# API endpoint for data display units to show how full a specified lot is.
+get '/api/v1/display/usage/:site/:zone/:lot' do
+    # TODO: return the result as JSON.
 end
 ##
 # Catch-all 404 error handler
