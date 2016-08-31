@@ -64,38 +64,34 @@ post '/auth/v1/local' do
     # TODO: Verify login credentials and authenticiate user.
     redirect '/data'
 end
-get '/data/sites' do
+get '/data' do
     @meta_name = 'All Sites'
     @data_sites = Site.all
     slim :list_sites
 end
 get '/data/:site' do
-    # TODO: Fetch site status from DB.
-    @meta_name = site_name + ' Site'
-    @data_site = Site.find_by(short_name: params[:site])
-    slim :status_site
-end
-get '/data/:site/zones' do
     @data_site = Site.find_by(short_name: params[:site])
     @data_zones = @data_site.zones
     @meta_name = 'Zones'
     slim :list_zones
 end
-get '/data/:site/:zone/lots' do
+get '/data/:site/:zone' do
+    @data_site = Site.find_by(short_name: params[:site])
+    @data_zone = @data_site.zones.find_by(short_name: params[:zone])
+    @data_lots = @data_zone.lots
     @meta_name = 'Lots'
     slim :list_lots
 end
-get '/data/:site/:zone' do
-    @meta_name = zone_name + ' Zone'
-    slim :status_zone
+get '/test' do
+    temp_lot = Site.first.zones.first.lots.first
+    temp_lot.used_spaces = 5
+    temp_lot.save
+    redirect '/data'
 end
-get '/data/:site/:zone/:lot' do
-    @meta_name = lot_name + ' Lot'
-    slim :status_lot
-end
-get '/data' do
-    redirect '/data/sites'
-end
+#get '/data/:site/:zone/:lot' do
+#    @meta_name = lot_name + ' Lot'
+#    slim :status_lot
+#end
 ###################################################################
 # API endpoints for embedded data collection and display devices. #
 ###################################################################
