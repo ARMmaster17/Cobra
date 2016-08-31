@@ -7,7 +7,10 @@ require 'json'
 require 'sinatra/activerecord'
 require 'rack-flash'
 require 'securerandom'
-#require_relative '../config/environments'
+require_relative '../config/environments'
+require_relative '../shared/models/lot'
+require_relative '../shared/models/zone'
+require_relative '../shared/models/site'
 
 set :port, ENV['PORT'] || 8080
 set :bind, ENV['IP'] || '0.0.0.0'
@@ -18,7 +21,7 @@ use Rack::Flash
 
 helpers do
     ##
-    # Defines if current user is logged in
+    # Defines if current user is logged in.
     def login?
         if ENV['CI']
             return true
@@ -27,6 +30,11 @@ helpers do
         else
             return true
         end
+    end
+    ##
+    # Defines if current user is a super user. (DISABLE IN PRODUCTION)
+    def admin?
+        return true
     end
     ##
     # Generates a new session key to use for verifying API calls
@@ -46,6 +54,7 @@ get '/login' do
     if login?
         redirect '/data'
     else
+        @meta_name = 'Login'
         slim :login
     end
 end
@@ -57,22 +66,31 @@ post '/auth/v1/local' do
 end
 get '/data/sites' do
     # TODO: Fetch all sites from DB.
+    @meta_name = 'All Sites'
+    @data_sites = Site.all
+    slim :list_sites
 end
 get '/data/:site' do
     # TODO: Fetch site status from DB.
+    @meta_name = site_name + ' Site'
+    @data_site = Site.find_by(short_name: params[:site])
     slim :status_site
 end
 get '/data/:site/zones' do
     # TODO: Fetch all zones from DB.
+    @meta_name = 'Zones'
     slim :list_zones
 end
 get '/data/:site/:zone/lots' do
+    @meta_name = 'Lots'
     slim :list_lots
 end
 get '/data/:site/:zone' do
+    @meta_name = zone_name + ' Zone'
     slim :status_zone
 end
 get '/data/:site/:zone/:lot' do
+    @meta_name = lot_name + ' Lot'
     slim :status_lot
 end
 get '/data' do
