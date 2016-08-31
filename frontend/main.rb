@@ -65,7 +65,6 @@ post '/auth/v1/local' do
     redirect '/data'
 end
 get '/data/sites' do
-    # TODO: Fetch all sites from DB.
     @meta_name = 'All Sites'
     @data_sites = Site.all
     slim :list_sites
@@ -77,7 +76,8 @@ get '/data/:site' do
     slim :status_site
 end
 get '/data/:site/zones' do
-    # TODO: Fetch all zones from DB.
+    @data_site = Site.find_by(short_name: params[:site])
+    @data_zones = @data_site.zones
     @meta_name = 'Zones'
     slim :list_zones
 end
