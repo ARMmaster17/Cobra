@@ -19,3 +19,5 @@ gem 'activemodel', '~> 4.2.5.1'
 gem 'rspec'
 gem 'guard'  
 gem 'guard-rspec'
+gem 'codeclimate-test-reporter', group: :test
+# gem 'selenium-webdriver', group: :test
