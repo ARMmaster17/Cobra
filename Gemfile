@@ -13,10 +13,10 @@ gem 'rest-client'
 gem 'json'
 gem 'bunny'
 gem "rack-test"
-gem "activerecord", "~> 4.2.5.1"
+gem "activerecord"
 gem "sinatra-activerecord"
 gem "pg"
-gem 'activemodel', '~> 4.2.5.1'
+gem 'activemodel'
 gem 'rspec'
 gem 'guard'  
 gem 'guard-rspec'
