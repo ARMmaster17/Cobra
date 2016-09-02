@@ -8,13 +8,15 @@ env:
 branches:
   only:
     - master
+#addons:
+#  sauce_connect: true
 install:
   - bundle install
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - rake db:migrate
 script:
-  - rake test --trace
+  - rspec
 deploy:
   provider: heroku
   api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
