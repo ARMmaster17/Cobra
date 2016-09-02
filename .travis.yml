@@ -11,7 +11,8 @@ branches:
 install:
   - bundle install
 before_script:
-  - ./scripts/beforescript.sh
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - rake db:migrate
 script:
   - rake test --trace
 deploy:
