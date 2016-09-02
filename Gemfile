@@ -16,3 +16,6 @@ gem "activerecord", "~> 4.2.5.1"
 gem "sinatra-activerecord"
 gem "pg"
 gem 'activemodel', '~> 4.2.5.1'
+gem 'rspec'
+gem 'guard'  
+gem 'guard-rspec'
