@@ -27,4 +27,16 @@ describe 'Server Service' do
     get '/data/fl/north'
     expect(last_response).to be_ok
   end
+  it "should increment the number of used spots in Lot A" do
+    get '/api/v1/flow/inbound/raw/fl/north/lot-a'
+    expect(last_response).to be_ok
+  end
+  it "should decrement the number of used spots in Lot A" do
+    get '/api/v1/flow/outbound/raw/fl/north/lot-a'
+    expect(last_response).to be_ok
+  end
+  it "should report the status of Lot A in JSON form" do
+    get '/api/v1/display/usage/fl/north/lot-a'
+    expect(last_response).to be_ok
+  end
 end

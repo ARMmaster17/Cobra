@@ -98,27 +98,38 @@ end
 ##
 # API endpoint for dumb data collection endpoints recording inbound vehicles.
 get '/api/v1/flow/inbound/raw/:site/:zone/:lot' do
-    
+    data_site = Site.find_by(short_name: params[:site])
+    data_zone = data_site.zones.find_by(short_name: params[:zone])
+    data_lot = data_zone.lots.find_by(short_name: params[:lot])
+    data_lot.used_spaces += 1
+    data_lot.save
 end
 ##
 # API endpoint for dumb data collection endpoints recording outbound vehicles.
 get '/api/v1/flow/outbound/raw/:site/:zone/:lot' do
-    
+    data_site = Site.find_by(short_name: params[:site])
+    data_zone = data_site.zones.find_by(short_name: params[:zone])
+    data_lot = data_zone.lots.find_by(short_name: params[:lot])
+    data_lot.used_spaces -= 1
+    data_lot.save
 end
 ##
 # API endpoint for smart data collection endpoints recording inbound tagged vehicles.
 get '/api/v1/flow/inbound/marked/:site/:zone/:lot/:vhid' do
-    
+    # Do nothing right now. Needs to be implemented on backend first.
 end
 ##
 # API endpoint for smart data collection endpoints recording outbound tagged vehicles.
 get '/api/v1/flow/outbound/marked/:site/:zone/:lot/:vhid' do
-    
+    # Do nothing right now. Needs to be implemented on backend first.
 end
 ##
-# API endpoint for data display units to show how full a specified lot is.
+# API endpoint for data display units to show data about a specified lot.
 get '/api/v1/display/usage/:site/:zone/:lot' do
-    # TODO: return the result as JSON.
+    data_site = Site.find_by(short_name: params[:site])
+    data_zone = data_site.zones.find_by(short_name: params[:zone])
+    data_lot = data_zone.lots.find_by(short_name: params[:lot])
+    return data_lot.to_json
 end
 ##
 # Catch-all 404 error handler
