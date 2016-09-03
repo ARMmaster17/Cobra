@@ -19,4 +19,12 @@ describe 'Server Service' do
     get '/data'
     expect(last_response).to be_ok
   end
-end  
+  it "should load the zone listings page" do
+    get '/data/fl'
+    expect(last_response).to be_ok
+  end
+  it "should load the lot listings page" do
+    get '/data/fl/north'
+    expect(last_response).to be_ok
+  end
+end
