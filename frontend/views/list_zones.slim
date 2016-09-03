@@ -17,8 +17,8 @@
                             <tr>
                                 <td>#{z.id}</td>
                                 <td><a href="/data/#{@data_site.short_name}/#{z.short_name}">#{z.full_name}</a></td>
-                                <td>0 %</td>
-                                <td>0</td>
+                                <td>#{(Float(z.used_spaces) / Float(z.total_spaces)) * 100}%</td>
+                                <td>#{z.total_spaces}</td>
                             </tr>
                     </tbody>
                 </table>
