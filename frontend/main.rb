@@ -82,16 +82,11 @@ get '/data/:site/:zone' do
     @meta_name = 'Lots'
     slim :list_lots
 end
-get '/test' do
-    temp_lot = Site.first.zones.first.lots.first
-    temp_lot.used_spaces = 5
-    temp_lot.save
-    redirect '/data'
+get '/data/:site/:zone/:lot' do
+    @meta_name = lot_name + ' Lot'
+    # Don't pass in any data. This will be handled by Angular through the API.
+    slim :status_lot
 end
-#get '/data/:site/:zone/:lot' do
-#    @meta_name = lot_name + ' Lot'
-#    slim :status_lot
-#end
 ###################################################################
 # API endpoints for embedded data collection and display devices. #
 ###################################################################
