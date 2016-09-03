@@ -11,6 +11,7 @@ env:
 branches:
   only:
     - master
+    - dev
 #addons:
 #  sauce_connect: true
 install:
@@ -27,3 +28,4 @@ deploy:
   app: cobra-traffic
   skip_cleanup: true
   run: "rake db:migrate"
+  on: master
