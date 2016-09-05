@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831010102) do
+ActiveRecord::Schema.define(version: 20160905010102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "keys", force: :cascade do |t|
+    t.string   "key_identifier"
+    t.string   "key_secret"
+    t.integer  "rate_limit",     default: -1
+    t.integer  "requests_used",  default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "read_only",      default: true
+  end
 
   create_table "lots", force: :cascade do |t|
     t.integer  "zone_id"
@@ -27,9 +36,8 @@ ActiveRecord::Schema.define(version: 20160831010102) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "used_spaces"
+    t.index ["zone_id"], name: "index_lots_on_zone_id", using: :btree
   end
-
-  add_index "lots", ["zone_id"], name: "index_lots_on_zone_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "full_name"
@@ -44,8 +52,7 @@ ActiveRecord::Schema.define(version: 20160831010102) do
     t.string   "short_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["site_id"], name: "index_zones_on_site_id", using: :btree
   end
-
-  add_index "zones", ["site_id"], name: "index_zones_on_site_id", using: :btree
 
 end

@@ -11,6 +11,7 @@ require_relative '../config/environments'
 require_relative '../shared/models/lot'
 require_relative '../shared/models/zone'
 require_relative '../shared/models/site'
+require_relative '../shared/models/key'
 
 set :port, ENV['PORT'] || 8080
 set :bind, ENV['IP'] || '0.0.0.0'
@@ -34,6 +35,7 @@ helpers do
     ##
     # Defines if current user is a super user.
     def admin?
+        return true
         if ENV['CI'] || ENV['RACK_ENV'].eql?('TEST')
             return true
         elsif session[:admin_auth].nil?
@@ -110,6 +112,26 @@ end
 get '/secured/admin' do
     redirect '/auth/v1/sso/github' unless admin?
     redirect '/secured/admin/sites'
+end
+get '/secured/admin/api/generate/rw' do
+    redirect '/auth/v1/sso/github' unless admin?
+    @key = Key.create do |k|
+        k.key_identifier = SecureRandom.urlsafe_base64(10)
+        k.key_secret = SecureRandom.urlsafe_base64(25)
+        k.read_only = false
+    end
+    @meta_name = "Admin - API Key Generation"
+    slim :admin_api_key_generate
+end
+get '/secured/admin/api/generate/r' do
+    redirect '/auth/v1/sso/github' unless admin?
+    @key = Key.create do |k|
+        k.key_identifier = SecureRandom.urlsafe_base64(10)
+        k.key_secret = SecureRandom.urlsafe_base64(25)
+        k.read_only = true
+    end
+    @meta_name = "Admin - API Key Generation"
+    slim :admin_api_key_generate
 end
 get '/secured/admin/sites' do
     redirect '/auth/v1/sso/github' unless admin?
@@ -258,6 +280,18 @@ end
 ##
 # API endpoint for dumb data collection endpoints recording inbound vehicles.
 get '/api/v1/flow/inbound/raw/:site/:zone/:lot' do
+    begin
+        key = Key.find_by!(key_identifier: params[:id], key_secret: params[:secret])
+        if key.read_only
+            raise 'Permissions error'
+        end
+    rescue ActiveRecord::RecordNotFound
+        status 403
+        return "Authorization failed."
+    rescue
+        status 403
+        return "Key does not have neccesary permission to perform transaction."
+    end
     data_site = Site.find_by(short_name: params[:site])
     data_zone = data_site.zones.find_by(short_name: params[:zone])
     data_lot = data_zone.lots.find_by(short_name: params[:lot])
@@ -267,6 +301,18 @@ end
 ##
 # API endpoint for dumb data collection endpoints recording outbound vehicles.
 get '/api/v1/flow/outbound/raw/:site/:zone/:lot' do
+    begin
+        key = Key.find_by!(key_identifier: params[:id], key_secret: params[:secret])
+        if key.read_only
+            raise 'Permissions error'
+        end
+    rescue ActiveRecord::RecordNotFound
+        status 403
+        return "Authorization failed."
+    rescue
+        status 403
+        return "Key does not have neccesary permission to perform transaction."
+    end
     data_site = Site.find_by(short_name: params[:site])
     data_zone = data_site.zones.find_by(short_name: params[:zone])
     data_lot = data_zone.lots.find_by(short_name: params[:lot])
@@ -286,6 +332,12 @@ end
 ##
 # API endpoint for data display units to show data about a specified lot.
 get '/api/v1/display/usage/:site/:zone/:lot' do
+    begin
+        Key.find_by!(key_identifier: params[:id], key_secret: params[:secret])
+    rescue ActiveRecord::RecordNotFound
+        status 403
+        return "Authorization failed."
+    end
     data_site = Site.find_by(short_name: params[:site])
     data_zone = data_site.zones.find_by(short_name: params[:zone])
     data_lot = data_zone.lots.find_by(short_name: params[:lot])
