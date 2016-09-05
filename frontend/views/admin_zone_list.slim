@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Zones</h1>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Short Name</th>
+                            <th>Created At</th>
+                            <th>Updated At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form action="/secured/admin/#{@data_site.short_name}/new" method="POST">
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="input-control text">
+                                        <input type="text" name="full-name" placeholder="Full Name">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control text">
+                                        <input type="text" name="short-name" placeholder="Short Name">
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input class="button success" type="submit" name="operation" value="Create" />
+                                </td>
+                            </tr>
+                        </form>
+                        - @data_zones.each do |z|
+                            <form action="/secured/admin/#{@data_site.short_name}/#{z.short_name}" method="POST">
+                                <tr>
+                                    <td>
+                                        <div class="input-control number">
+                                            <input type="number" name="id" readonly value="#{z.id}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="full-name" value="#{z.full_name}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="short-name" value="#{z.short_name}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="created_at" readonly value="#{z.created_at}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="updated_at" readonly value="#{z.updated_at}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="/secured/admin/#{@data_site.short_name}/#{z.short_name}" class="button primary">Details</a>
+                                        <input class="button primary" type="submit" name="operation" value="Update" />
+                                        <input class="button danger" type="submit" name="operation" value="Delete" />
+                                    </td>
+                                </tr>
+                            </form>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
