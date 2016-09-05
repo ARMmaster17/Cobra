@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Lots</h1>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Short Name</th>
+                            <th>Total Spaces</th>
+                            <th>Used Spaces</th>
+                            <th>Staff Only</th>
+                            <th>Restricted Access</th>
+                            <th>Trackable</th>
+                            <th>Created At</th>
+                            <th>Updated At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form action="/secured/admin/#{@data_site.short_name}/#{@data_zone.short_name}/new" method="POST">
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="input-control text">
+                                        <input type="text" name="full-name" placeholder="Full Name">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control text">
+                                        <input type="text" name="short-name" placeholder="Short Name">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control number">
+                                        <input type="number" name="total-spaces" min="0">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control number">
+                                        <input type="number" name="used-spaces" min="0">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control checkbox">
+                                        <input type="checkbox" name="is-staff-only" value="Yes">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control checkbox">
+                                        <input type="checkbox" name="is-restricted-access" value="Yes">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-control checkbox">
+                                        <input type="checkbox" name="is-trackable" value="Yes">
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input class="button success" type="submit" name="operation" value="Create" />
+                                </td>
+                            </tr>
+                        </form>
+                        - @data_lots.each do |l|
+                            <form action="/secured/admin/#{@data_site.short_name}/#{@data_zone.short_name}/#{l.short_name}" method="POST">
+                                <tr>
+                                    <td>
+                                        <div class="input-control number">
+                                            <input type="number" name="id" readonly value="#{l.id}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="full-name" value="#{l.full_name}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="short-name" value="#{l.short_name}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control number">
+                                            <input type="number" name="total-spaces" min="0" value="#{l.total_spaces}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control number">
+                                            <input type="number" name="used-spaces" min="0" value="#{l.used_spaces}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control checkbox">
+                                            - if l.is_staff_only.eql?(true)
+                                                <input type="checkbox" name="is-staff-only" checked=true value="Yes">
+                                            - else
+                                                <input type="checkbox" name="is-staff-only" checked=false value="Yes">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control checkbox">
+                                            - if l.is_restricted_access.eql?(true)
+                                                <input type="checkbox" name="is-restricted-access" checked=true value="Yes">
+                                            - else
+                                                <input type="checkbox" name="is-restricted-access" checked=false value="Yes">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control checkbox">
+                                            - if l.is_trackable.eql?(true)
+                                                <input type="checkbox" name="is-trackable" checked=true value="Yes">
+                                            - else
+                                                <input type="checkbox" name="is-trackable" checked=false value="Yes">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="created_at" readonly value="#{l.created_at}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text">
+                                            <input type="text" name="updated_at" readonly value="#{l.updated_at}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="/secured/admin/#{@data_site.short_name}/#{@data_zone.short_name}/#{l.short_name}" class="button primary">Details</a>
+                                        <input class="button primary" type="submit" name="operation" value="Update" />
+                                        <input class="button danger" type="submit" name="operation" value="Delete" />
+                                    </td>
+                                </tr>
+                            </form>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
