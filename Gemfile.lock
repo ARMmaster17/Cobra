@@ -25,6 +25,9 @@ GEM
     domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.9.14)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     formatador (0.2.5)
     guard (2.14.0)
       formatador (>= 0.2.4)
@@ -96,6 +99,9 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby_dep (1.4.0)
+    scrypt (3.0.3)
+      ffi-compiler (>= 1.0.0)
+      rake
     shellany (0.0.1)
     simplecov (0.12.0)
       docile (~> 1.1.0)
@@ -143,6 +149,7 @@ DEPENDENCIES
   rdoc
   rest-client
   rspec
+  scrypt
   sinatra
   sinatra-activerecord
   slim

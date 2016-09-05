@@ -10,6 +10,7 @@ task :seed do
     Lot.destroy_all
     Zone.destroy_all
     Site.all.destroy_all
+    Key.all.destroy_all
     site1 = Site.create do |s|
         s.full_name = 'Daytona Beach, FL'
         s.short_name = 'fl'
@@ -53,5 +54,15 @@ task :seed do
         l.is_restricted_access = false
         l.is_trackable = true
         l.used_spaces = 4
+    end
+    key1 = Key.create do |k|
+        k.key_identifier = "1111AAAA"
+        k.key_secret = "123456789ABCDEFGHI"
+        k.read_only = false
+    end
+    key2 = Key.create do |k|
+        k.key_identifier = "AAAA1111"
+        k.key_secret = "ABCDEFGHI123456789"
+        k.read_only = true
     end
 end
