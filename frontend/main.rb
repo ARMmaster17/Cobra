@@ -298,7 +298,7 @@ get '/api/v1/flow/inbound/raw/:site/:zone/:lot' do
     data['zone'] = params[:zone]
     data['lot'] = params[:lot]
     data['direction'] = 'in'
-    Externaljob.send("cobra.outbound.api.flow.raw", data.to_json)
+    Externaljob.send(data.to_json, "cobra.outbound.api.flow.raw")
     status 200
     return "Transaction queued."
 end
@@ -322,7 +322,7 @@ get '/api/v1/flow/outbound/raw/:site/:zone/:lot' do
     data['zone'] = params[:zone]
     data['lot'] = params[:lot]
     data['direction'] = 'out'
-    Externaljob.send("cobra.outbound.api.flow.raw", data.to_json)
+    Externaljob.send(data.to_json, "cobra.outbound.api.flow.raw")
     status 200
     return "Transaction queued."
 end

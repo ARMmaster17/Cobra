@@ -15,7 +15,7 @@ conn.start
 ch = conn.create_channel
 q1  = ch.queue("cobra.outbound.api.flow.raw")
 
-q1.subscribe do |delivery_info, metadata, payload|
+q1.subscribe(:block => true) do |delivery_info, metadata, payload|
     parameters = JSON.parse(payload)
     data_site = Site.find_by(short_name: parameters['site'])
     data_zone = data_site.zones.find_by(short_name: parameters['zone'])
@@ -29,5 +29,5 @@ q1.subscribe do |delivery_info, metadata, payload|
 end
 
 while true
-    
+    # Do nothing
 end
