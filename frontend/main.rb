@@ -7,6 +7,7 @@ require 'json'
 require 'sinatra/activerecord'
 require 'rack-flash'
 require 'securerandom'
+require 'bunny'
 require_relative '../config/environments'
 require_relative '../shared/models/lot'
 require_relative '../shared/models/zone'
@@ -20,6 +21,8 @@ set :bind, ENV['IP'] || '0.0.0.0'
 
 enable :sessions
 use Rack::Flash
+
+Externaljob.init()
 
 helpers do
     ##
