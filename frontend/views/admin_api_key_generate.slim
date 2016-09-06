@@ -1,3 +1,4 @@
 <h1>Your new API key has been generated!</h1>
-<p>Client ID: #{@key.key_identifier}</p>
-<p>Client Secret: #{@key.key_secret}</p>
+<p>Client ID: #{@key['identifier']}</p>
+<p>Client Secret: #{@key['secret']}</p>
+<p>Permissions: #{@key['permissions']}</p>
