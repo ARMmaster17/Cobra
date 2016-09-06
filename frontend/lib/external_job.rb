@@ -1,6 +1,7 @@
 require 'bunny'
 require 'json'
 
+# Launches a one-way data job with RabbitMQ
 module Externaljob
     def Externaljob.send(payload, queue)
         c = Bunny.new(ENV['RABBITMQ_BIGWIG_TX_URL'])
