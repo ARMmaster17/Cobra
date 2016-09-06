@@ -16,6 +16,7 @@ branches:
 #  sauce_connect: true
 services:
   - rabbitmq
+  - redis-server
 install:
   - bundle install
 before_script:

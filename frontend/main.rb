@@ -12,8 +12,8 @@ require_relative '../config/environments'
 require_relative '../shared/models/lot'
 require_relative '../shared/models/zone'
 require_relative '../shared/models/site'
-require_relative '../shared/models/key'
 require_relative './lib/external_job.rb'
+require_relative './lib/api_key.rb'
 
 set :port, ENV['PORT'] || 8080
 set :bind, ENV['IP'] || '0.0.0.0'
@@ -23,6 +23,7 @@ enable :sessions
 use Rack::Flash
 
 Externaljob.init()
+ApiKey.init()
 
 helpers do
     ##
@@ -117,23 +118,9 @@ get '/secured/admin' do
     redirect '/auth/v1/sso/github' unless admin?
     redirect '/secured/admin/sites'
 end
-get '/secured/admin/api/generate/rw' do
+get '/secured/admin/api/generate/:permissions' do
     redirect '/auth/v1/sso/github' unless admin?
-    @key = Key.create do |k|
-        k.key_identifier = SecureRandom.urlsafe_base64(10)
-        k.key_secret = SecureRandom.urlsafe_base64(25)
-        k.read_only = false
-    end
-    @meta_name = "Admin - API Key Generation"
-    slim :admin_api_key_generate
-end
-get '/secured/admin/api/generate/r' do
-    redirect '/auth/v1/sso/github' unless admin?
-    @key = Key.create do |k|
-        k.key_identifier = SecureRandom.urlsafe_base64(10)
-        k.key_secret = SecureRandom.urlsafe_base64(25)
-        k.read_only = true
-    end
+    @key = ApiKey.create(params[:permissions])
     @meta_name = "Admin - API Key Generation"
     slim :admin_api_key_generate
 end
@@ -284,17 +271,9 @@ end
 ##
 # API endpoint for dumb data collection endpoints recording inbound vehicles.
 get '/api/v1/flow/inbound/raw/:site/:zone/:lot' do
-    begin
-        key = Key.find_by!(key_identifier: params[:id], key_secret: params[:secret])
-        if key.read_only
-            raise 'Permissions error'
-        end
-    rescue ActiveRecord::RecordNotFound
+    if !ApiKey.auth(params[:id], params[:secret], 'w')
         status 403
-        return "Authorization failed."
-    rescue
-        status 403
-        return "Key does not have neccesary permission to perform transaction."
+        return "Not authorized"
     end
     data = Hash.new
     data['site'] = params[:site]
@@ -308,17 +287,9 @@ end
 ##
 # API endpoint for dumb data collection endpoints recording outbound vehicles.
 get '/api/v1/flow/outbound/raw/:site/:zone/:lot' do
-    begin
-        key = Key.find_by!(key_identifier: params[:id], key_secret: params[:secret])
-        if key.read_only
-            raise 'Permissions error'
-        end
-    rescue ActiveRecord::RecordNotFound
+    if !ApiKey.auth(params[:id], params[:secret], 'w')
         status 403
-        return "Authorization failed."
-    rescue
-        status 403
-        return "Key does not have neccesary permission to perform transaction."
+        return "Not authorized"
     end
     data = Hash.new
     data['site'] = params[:site]
@@ -342,11 +313,9 @@ end
 ##
 # API endpoint for data display units to show data about a specified lot.
 get '/api/v1/display/usage/:site/:zone/:lot' do
-    begin
-        Key.find_by!(key_identifier: params[:id], key_secret: params[:secret])
-    rescue ActiveRecord::RecordNotFound
+    if !ApiKey.auth(params[:id], params[:secret], 'r')
         status 403
-        return "Authorization failed."
+        return "Not authorized"
     end
     data_site = Site.find_by(short_name: params[:site])
     data_zone = data_site.zones.find_by(short_name: params[:zone])

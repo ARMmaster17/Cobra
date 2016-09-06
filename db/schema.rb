@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905010102) do
+ActiveRecord::Schema.define(version: 20160906010101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "keys", force: :cascade do |t|
-    t.string   "key_identifier"
-    t.string   "key_secret"
-    t.integer  "rate_limit",     default: -1
-    t.integer  "requests_used",  default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "read_only",      default: true
-  end
 
   create_table "lots", force: :cascade do |t|
     t.integer  "zone_id"
