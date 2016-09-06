@@ -1,5 +1,7 @@
 require_relative 'frontend/main'
 require 'sinatra/activerecord/rake'
+require 'redis'
+require 'json'
 
 task :test do
   ruby "testing/testall.rb"
@@ -10,7 +12,6 @@ task :seed do
     Lot.destroy_all
     Zone.destroy_all
     Site.all.destroy_all
-    Key.all.destroy_all
     site1 = Site.create do |s|
         s.full_name = 'Daytona Beach, FL'
         s.short_name = 'fl'
@@ -55,14 +56,17 @@ task :seed do
         l.is_trackable = true
         l.used_spaces = 4
     end
-    key1 = Key.create do |k|
-        k.key_identifier = "1111AAAA"
-        k.key_secret = "123456789ABCDEFGHI"
-        k.read_only = false
-    end
-    key2 = Key.create do |k|
-        k.key_identifier = "AAAA1111"
-        k.key_secret = "ABCDEFGHI123456789"
-        k.read_only = true
-    end
+    redis = Redis.new(url: ENV["REDIS_URL"])
+    
+    key1 = Hash.new
+    key1['identifier'] = "1111AAAA"
+    key1['secret'] = "123456789ABCDEFGHI"
+    key1['permissions'] = 'rw'
+    redis.set(key1['identifier'], key1.to_json)
+    
+    key2 = Hash.new
+    key2['identifier'] = "AAAA1111"
+    key2['secret'] = "ABCDEFGHI123456789"
+    key2['permissions'] = 'r'
+    redis.set(key2['identifier'], key2.to_json)
 end
