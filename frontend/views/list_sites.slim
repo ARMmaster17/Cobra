@@ -17,7 +17,7 @@
                             <tr>
                                 <td>#{s.id}</td>
                                 <td><a href="/data/#{s.short_name}">#{s.full_name}</a></td>
-                                <td>#{(Float(s.used_spaces) / Float(s.total_spaces)) * 100}%</td>
+                                <td>#{((Float(s.used_spaces) / Float(s.total_spaces)) * 100).round(1)}%</td>
                                 <td>#{s.total_spaces}</td>
                             </tr>
                     </tbody>
