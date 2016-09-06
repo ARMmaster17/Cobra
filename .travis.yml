@@ -14,6 +14,8 @@ branches:
     - dev
 #addons:
 #  sauce_connect: true
+services:
+  - rabbitmq
 install:
   - bundle install
 before_script:

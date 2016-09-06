@@ -12,6 +12,7 @@ require_relative '../shared/models/lot'
 require_relative '../shared/models/zone'
 require_relative '../shared/models/site'
 require_relative '../shared/models/key'
+require_relative './lib/external_job.rb'
 
 set :port, ENV['PORT'] || 8080
 set :bind, ENV['IP'] || '0.0.0.0'
@@ -292,11 +293,14 @@ get '/api/v1/flow/inbound/raw/:site/:zone/:lot' do
         status 403
         return "Key does not have neccesary permission to perform transaction."
     end
-    data_site = Site.find_by(short_name: params[:site])
-    data_zone = data_site.zones.find_by(short_name: params[:zone])
-    data_lot = data_zone.lots.find_by(short_name: params[:lot])
-    data_lot.used_spaces += 1
-    data_lot.save
+    data = Hash.new
+    data['site'] = params[:site]
+    data['zone'] = params[:zone]
+    data['lot'] = params[:lot]
+    data['direction'] = 'in'
+    Externaljob.send("cobra.outbound.api.flow.raw", data.to_json)
+    status 200
+    return "Transaction queued."
 end
 ##
 # API endpoint for dumb data collection endpoints recording outbound vehicles.
@@ -313,11 +317,14 @@ get '/api/v1/flow/outbound/raw/:site/:zone/:lot' do
         status 403
         return "Key does not have neccesary permission to perform transaction."
     end
-    data_site = Site.find_by(short_name: params[:site])
-    data_zone = data_site.zones.find_by(short_name: params[:zone])
-    data_lot = data_zone.lots.find_by(short_name: params[:lot])
-    data_lot.used_spaces -= 1
-    data_lot.save
+    data = Hash.new
+    data['site'] = params[:site]
+    data['zone'] = params[:zone]
+    data['lot'] = params[:lot]
+    data['direction'] = 'out'
+    Externaljob.send("cobra.outbound.api.flow.raw", data.to_json)
+    status 200
+    return "Transaction queued."
 end
 ##
 # API endpoint for smart data collection endpoints recording inbound tagged vehicles.
