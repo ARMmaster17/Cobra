@@ -18,7 +18,7 @@ module ApiKey
     def ApiKey.auth(identifier, secret, permission)
         key = Hash.new
         begin
-            key = JSON.parse(@redis.get)
+            key = JSON.parse(@redis.get(identifier))
         rescue
             # Key not found
             return false
