@@ -22,5 +22,6 @@ gem 'guard'
 gem 'guard-rspec'
 gem 'scrypt'
 gem 'redis'
+gem 'newrelic_rpm'
 gem 'codeclimate-test-reporter', group: :test
 # gem 'selenium-webdriver', group: :test
