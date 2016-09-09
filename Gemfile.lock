@@ -59,6 +59,7 @@ GEM
     minitest (5.9.0)
     nenv (0.3.0)
     netrc (0.11.0)
+    newrelic_rpm (3.16.2.321)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -141,6 +142,7 @@ DEPENDENCIES
   guard
   guard-rspec
   json
+  newrelic_rpm
   pg
   puma
   rack-flash3

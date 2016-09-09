@@ -1,3 +1,8 @@
+# Ignore Foreman Procfile ENV files.
+.env
+# Ignore local copy of API keys
+.api.keys
+
 *.gem
 *.rbc
 /.config
