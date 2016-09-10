@@ -6,3 +6,4 @@ languages:
 exclude_paths:
 - "Rakefile"
 - "Gaurdfile"
+- "db/migrate/*.rb"
