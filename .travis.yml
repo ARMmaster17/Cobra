@@ -1,34 +1,32 @@
 language: ruby
 cache: bundler
 addons:
-    code_climate:
-        repo_token: c4423709ed4e210ed3ea4330ad3275ba67b5734a3d9c73934440230a4dd67a9e
+  code_climate:
+    repo_token: c4423709ed4e210ed3ea4330ad3275ba67b5734a3d9c73934440230a4dd67a9e
 rvm:
-  - 2.3.0
+- 2.3.0
 env:
   global:
-    - RACK_ENV=test
+  - RACK_ENV=test
 branches:
   only:
-    - master
-    - dev
-#addons:
-#  sauce_connect: true
+  - master
+  - dev
 services:
-  - rabbitmq
-  - redis-server
-install:
-  - bundle install
+- rabbitmq
+- redis-server
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - rake db:migrate
-  - rake seed
+- psql -c 'create database travis_ci_test;' -U postgres
+- rake db:migrate
+- rake seed
 script:
-  - rspec
+- rspec
 deploy:
   provider: heroku
-  api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
+  api_key:
+    secure: sKb+XB0SwPxkm6uY2wwoRQy48etRvtgC8H0TCRjTrpPPGvD/MjfLjwQuef1FEMUm2vC8Am7uBigEUvD7V9Zl0JzrGb6hoqkZYFMWF5IeJoMnjJvRXcK6RYc5q4eViD1n/d60fZ0eF1BIYeqiEzoW6wvCWg3P4Viu2iRuBMUMT9SF6USXKh8Kmt/Te9indolVYx9AyWIDNWX46lpvNMyjWI1J+HaNU2yv9cglM6BoVU0SOQNxp6jRSyClBZeLNr3heuAmXtU8BpTJDV2q988b2VGFg+HP/yjy/6WzJTUY1m8u1rHRoD2t9YQomT7H3+PBvZkfvXy5CRSUCD8RSwlqOl7/8aoZ4ziTnoc4ARm1LFVBxCuSnWkiHGCHvSe4b4txhKw+cXgc8GCJhL8qEE33bQ2SLr4prbCzUvwlQp4u+fhB4klZYCghU+jBsEsaC5S5kMh4G2iOe4RL1I5v/cY8LIXHp2wKN4mglpJi0lBsmKHTCmA+CgJ9FsK6rdIfrqR044JZT01PGsti46F6FBBIN1FhkD9t/YD3quKe6tkJeUpdQcz1TbmmWuBbvS9nLcaVcLBUIlImwrIevtRBodo3oli34ywWgZoIfzCVke24Dh2RDWLZ9yW35ryoJmaQl4ODuXdDZFpAnCgmLMFgHmicbIMndzpsi8TE6kJAMJfvLUQ=
   app: cobra-traffic
-  skip_cleanup: true
   run: "rake db:migrate"
-  on: master
+  on:
+    repo: ARMmaster17/Cobra
+    branch: master
