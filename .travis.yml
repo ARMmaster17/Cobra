@@ -6,7 +6,7 @@ addons:
 rvm:
   - 1.9.3
   - 2.3.0
-  - jruby
+  - jruby-9.0.5.0
 env:
   global:
     - RACK_ENV=test
@@ -20,7 +20,7 @@ services:
   - rabbitmq
   - redis-server
 install:
-  - bundle install
+  - bundle update --jobs=3 --retry=3 --ruby
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - rake db:migrate
