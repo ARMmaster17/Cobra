@@ -21,7 +21,7 @@
                             <tr>
                                 <td>#{l.id}</td>
                                 <td><a href="/data/#{@data_site.short_name}/#{@data_zone.short_name}/#{l.short_name}">#{l.full_name}</a></td>
-                                <td>#{((Float(l.used_spaces) / Float(l.total_spaces)) * 100).round(1)}%</td>
+                                <td>#{ParkingUsage.get_lot(@data_site.short_name, @data_zone.short_name, l.short_name)}%</td>
                                 <td>#{l.used_spaces}</td>
                                 <td>#{l.total_spaces}</td>
                                 - if l.is_restricted_access

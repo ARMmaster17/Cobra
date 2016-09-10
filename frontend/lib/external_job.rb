@@ -2,7 +2,7 @@ require 'bunny'
 require 'json'
 
 ##
-# Launches a one-way data job with RabbitMQ
+# Launches a one-way data job with RabbitMQ.
 module Externaljob
     def Externaljob.init()
         @c = Bunny.new(ENV['RABBITMQ_BIGWIG_TX_URL'])
@@ -12,6 +12,9 @@ module Externaljob
     def Externaljob.send(payload, queue)
         q  = @ch.queue(queue)
         x  = @ch.default_exchange
-        x.publish(payload, :routing_key => q.name)
+        data = Hash.new
+        data['payload'] = payload
+        data['type'] = queue
+        x.publish(data.to_json, :routing_key => "cobra.outbound")
     end
 end
