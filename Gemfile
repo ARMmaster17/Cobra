@@ -23,5 +23,5 @@ gem 'guard-rspec'
 gem 'scrypt'
 gem 'redis'
 gem 'newrelic_rpm'
-gem 'codeclimate-test-reporter'
+gem 'codeclimate-test-reporter', group: :test, require: nil
 # gem 'selenium-webdriver'
