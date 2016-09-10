@@ -43,7 +43,6 @@ helpers do
     ##
     # Defines if current user is a super user.
     def admin?
-        return true
         if ENV['CI'] || ENV['RACK_ENV'].eql?('TEST')
             return true
         elsif session[:admin_auth].nil?
