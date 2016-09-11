@@ -32,7 +32,7 @@ module DataCache
     def DataCache.isExpired(table, key, seconds)
         item = DataCache.get(table, key)
         if item.nil?
-            return false
+            return true
         end
         return Time.parse(item['last-modified']) + seconds < Time.new
     end
