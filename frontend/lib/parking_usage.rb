@@ -32,7 +32,7 @@ module ParkingUsage
         end
     end
     def ParkingUsage.get(uri)
-        if DataCache.isExpired('usage', uri, 10000)
+        if DataCache.isExpired('usage', uri, 30)
             puts 5
             Externaljob.send(uri, 'cobra.outbound.data.usage')
         end
