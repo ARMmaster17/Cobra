@@ -10,11 +10,11 @@ module Externaljob
         @ch = @c.create_channel
     end
     def Externaljob.send(payload, queue)
-        q  = @ch.queue(queue)
+        q  = @ch.queue("cobra.outbound")
         x  = @ch.default_exchange
         data = Hash.new
         data['payload'] = payload
         data['type'] = queue
-        x.publish(data.to_json, :routing_key => "cobra.outbound")
+        x.publish(data.to_json, :routing_key => q.name)
     end
 end

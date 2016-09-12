@@ -17,9 +17,11 @@ q.subscribe(:block => true) do |delivery_info, metadata, payload|
     data = Hash.new
     data = JSON.parse(payload)
     puts 0
+    puts payload
+    puts data
     Processor.go(data)
     puts 1
-    ch.ack(delivery_info.delivery_tag)
+    #ch.ack(delivery_info.delivery_tag)
 end
 
 #sleep
