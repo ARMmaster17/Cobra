@@ -20,7 +20,7 @@ module DataCache
         if data.nil?
             return nil
         else
-            return data['payload']
+            return JSON.parse(data)
         end
     end
     def DataCache.set(table, key, value)

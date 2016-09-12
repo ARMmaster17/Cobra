@@ -1112,3 +1112,199 @@
 [2016-09-12 16:12:51 +0000 armmaster17-cobra-3700378 (5904)] INFO : Installing deferred Puma::Rack::Builder instrumentation
 [2016-09-12 16:12:51 +0000 armmaster17-cobra-3700378 (5904)] INFO : Installing Puma::Rack::Builder middleware instrumentation
 [2016-09-12 16:13:27 +0000 armmaster17-cobra-3700378 (5906)] INFO : Starting Agent shutdown
+[2016-09-12 22:29:55 +0000 armmaster17-cobra-3700378 (4222)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:29:55 +0000 armmaster17-cobra-3700378 (4222)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:29:55 +0000 armmaster17-cobra-3700378 (4222)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:29:55 +0000 armmaster17-cobra-3700378 (4222)] INFO : Environment: development
+[2016-09-12 22:29:55 +0000 armmaster17-cobra-3700378 (4222)] INFO : No known dispatcher detected.
+[2016-09-12 22:29:55 +0000 armmaster17-cobra-3700378 (4222)] INFO : Application: My Application (Development)
+[2016-09-12 22:29:56 +0000 armmaster17-cobra-3700378 (4222)] INFO : Installing Net instrumentation
+[2016-09-12 22:29:56 +0000 armmaster17-cobra-3700378 (4222)] INFO : Finished instrumentation
+[2016-09-12 22:29:57 +0000 armmaster17-cobra-3700378 (4222)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Environment: development
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : No known dispatcher detected.
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Application: My Application (Development)
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing Net instrumentation
+[2016-09-12 22:30:03 +0000 armmaster17-cobra-3700378 (4220)] INFO : Finished instrumentation
+[2016-09-12 22:30:04 +0000 armmaster17-cobra-3700378 (4220)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:30:29 +0000 armmaster17-cobra-3700378 (4220)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:30:29 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:30:29 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:30:29 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:30:29 +0000 armmaster17-cobra-3700378 (4220)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:30:52 +0000 armmaster17-cobra-3700378 (4222)] INFO : Starting Agent shutdown
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : Environment: development
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : No known dispatcher detected.
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : Application: My Application (Development)
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : Installing Net instrumentation
+[2016-09-12 22:33:37 +0000 armmaster17-cobra-3700378 (4430)] INFO : Finished instrumentation
+[2016-09-12 22:33:38 +0000 armmaster17-cobra-3700378 (4430)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Environment: development
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : No known dispatcher detected.
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Application: My Application (Development)
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing Net instrumentation
+[2016-09-12 22:33:43 +0000 armmaster17-cobra-3700378 (4428)] INFO : Finished instrumentation
+[2016-09-12 22:33:44 +0000 armmaster17-cobra-3700378 (4428)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:35:08 +0000 armmaster17-cobra-3700378 (4428)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:35:08 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:35:08 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:35:08 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:35:08 +0000 armmaster17-cobra-3700378 (4428)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:37:01 +0000 armmaster17-cobra-3700378 (4430)] INFO : Starting Agent shutdown
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : Environment: development
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : No known dispatcher detected.
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : Application: My Application (Development)
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : Installing Net instrumentation
+[2016-09-12 22:37:05 +0000 armmaster17-cobra-3700378 (4616)] INFO : Finished instrumentation
+[2016-09-12 22:37:06 +0000 armmaster17-cobra-3700378 (4616)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:37:10 +0000 armmaster17-cobra-3700378 (4614)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:37:10 +0000 armmaster17-cobra-3700378 (4614)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:37:10 +0000 armmaster17-cobra-3700378 (4614)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:37:10 +0000 armmaster17-cobra-3700378 (4614)] INFO : Environment: development
+[2016-09-12 22:37:10 +0000 armmaster17-cobra-3700378 (4614)] INFO : No known dispatcher detected.
+[2016-09-12 22:37:10 +0000 armmaster17-cobra-3700378 (4614)] INFO : Application: My Application (Development)
+[2016-09-12 22:37:11 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:37:11 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:37:11 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:37:11 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:37:11 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing Net instrumentation
+[2016-09-12 22:37:11 +0000 armmaster17-cobra-3700378 (4614)] INFO : Finished instrumentation
+[2016-09-12 22:37:12 +0000 armmaster17-cobra-3700378 (4614)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:37:15 +0000 armmaster17-cobra-3700378 (4614)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:37:15 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:37:15 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:37:15 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:37:15 +0000 armmaster17-cobra-3700378 (4614)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:38:08 +0000 armmaster17-cobra-3700378 (4616)] INFO : Starting Agent shutdown
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : Environment: development
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : No known dispatcher detected.
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : Application: My Application (Development)
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : Installing Net instrumentation
+[2016-09-12 22:38:13 +0000 armmaster17-cobra-3700378 (4711)] INFO : Finished instrumentation
+[2016-09-12 22:38:14 +0000 armmaster17-cobra-3700378 (4711)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:38:18 +0000 armmaster17-cobra-3700378 (4709)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:38:18 +0000 armmaster17-cobra-3700378 (4709)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:38:18 +0000 armmaster17-cobra-3700378 (4709)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:38:18 +0000 armmaster17-cobra-3700378 (4709)] INFO : Environment: development
+[2016-09-12 22:38:18 +0000 armmaster17-cobra-3700378 (4709)] INFO : No known dispatcher detected.
+[2016-09-12 22:38:18 +0000 armmaster17-cobra-3700378 (4709)] INFO : Application: My Application (Development)
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing Net instrumentation
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Finished instrumentation
+[2016-09-12 22:38:19 +0000 armmaster17-cobra-3700378 (4709)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:38:22 +0000 armmaster17-cobra-3700378 (4709)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:38:22 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:38:22 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:38:22 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:38:22 +0000 armmaster17-cobra-3700378 (4709)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:38:36 +0000 armmaster17-cobra-3700378 (4711)] INFO : Starting Agent shutdown
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : Environment: development
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : No known dispatcher detected.
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : Application: My Application (Development)
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : Installing Net instrumentation
+[2016-09-12 22:39:03 +0000 armmaster17-cobra-3700378 (4804)] INFO : Finished instrumentation
+[2016-09-12 22:39:05 +0000 armmaster17-cobra-3700378 (4804)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:39:08 +0000 armmaster17-cobra-3700378 (4803)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:39:08 +0000 armmaster17-cobra-3700378 (4803)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:39:08 +0000 armmaster17-cobra-3700378 (4803)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:39:08 +0000 armmaster17-cobra-3700378 (4803)] INFO : Environment: development
+[2016-09-12 22:39:08 +0000 armmaster17-cobra-3700378 (4803)] INFO : No known dispatcher detected.
+[2016-09-12 22:39:08 +0000 armmaster17-cobra-3700378 (4803)] INFO : Application: My Application (Development)
+[2016-09-12 22:39:09 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:39:09 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:39:09 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:39:09 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:39:09 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing Net instrumentation
+[2016-09-12 22:39:09 +0000 armmaster17-cobra-3700378 (4803)] INFO : Finished instrumentation
+[2016-09-12 22:39:10 +0000 armmaster17-cobra-3700378 (4803)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:39:15 +0000 armmaster17-cobra-3700378 (4803)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:39:15 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:39:15 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:39:15 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:39:15 +0000 armmaster17-cobra-3700378 (4803)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:41:21 +0000 armmaster17-cobra-3700378 (4804)] INFO : Starting Agent shutdown
+[2016-09-12 22:41:24 +0000 armmaster17-cobra-3700378 (4971)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:41:24 +0000 armmaster17-cobra-3700378 (4971)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:41:24 +0000 armmaster17-cobra-3700378 (4971)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:41:24 +0000 armmaster17-cobra-3700378 (4971)] INFO : Environment: development
+[2016-09-12 22:41:24 +0000 armmaster17-cobra-3700378 (4971)] INFO : No known dispatcher detected.
+[2016-09-12 22:41:24 +0000 armmaster17-cobra-3700378 (4971)] INFO : Application: My Application (Development)
+[2016-09-12 22:41:25 +0000 armmaster17-cobra-3700378 (4971)] INFO : Installing Net instrumentation
+[2016-09-12 22:41:25 +0000 armmaster17-cobra-3700378 (4971)] INFO : Finished instrumentation
+[2016-09-12 22:41:26 +0000 armmaster17-cobra-3700378 (4971)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:41:29 +0000 armmaster17-cobra-3700378 (4968)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:41:29 +0000 armmaster17-cobra-3700378 (4968)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:41:29 +0000 armmaster17-cobra-3700378 (4968)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:41:29 +0000 armmaster17-cobra-3700378 (4968)] INFO : Environment: development
+[2016-09-12 22:41:29 +0000 armmaster17-cobra-3700378 (4968)] INFO : No known dispatcher detected.
+[2016-09-12 22:41:29 +0000 armmaster17-cobra-3700378 (4968)] INFO : Application: My Application (Development)
+[2016-09-12 22:41:30 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:41:30 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:41:30 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:41:30 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:41:30 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing Net instrumentation
+[2016-09-12 22:41:30 +0000 armmaster17-cobra-3700378 (4968)] INFO : Finished instrumentation
+[2016-09-12 22:41:31 +0000 armmaster17-cobra-3700378 (4968)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:41:36 +0000 armmaster17-cobra-3700378 (4968)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:41:36 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:41:36 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:41:36 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:41:36 +0000 armmaster17-cobra-3700378 (4968)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:42:02 +0000 armmaster17-cobra-3700378 (4971)] INFO : Starting Agent shutdown
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : Environment: development
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : No known dispatcher detected.
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : Application: My Application (Development)
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : Installing Net instrumentation
+[2016-09-12 22:42:05 +0000 armmaster17-cobra-3700378 (5057)] INFO : Finished instrumentation
+[2016-09-12 22:42:07 +0000 armmaster17-cobra-3700378 (5057)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:42:10 +0000 armmaster17-cobra-3700378 (5054)] INFO : Starting the New Relic agent in "development" environment.
+[2016-09-12 22:42:10 +0000 armmaster17-cobra-3700378 (5054)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-09-12 22:42:10 +0000 armmaster17-cobra-3700378 (5054)] INFO : Reading configuration from config/newrelic.yml (/home/ubuntu/workspace)
+[2016-09-12 22:42:10 +0000 armmaster17-cobra-3700378 (5054)] INFO : Environment: development
+[2016-09-12 22:42:10 +0000 armmaster17-cobra-3700378 (5054)] INFO : No known dispatcher detected.
+[2016-09-12 22:42:10 +0000 armmaster17-cobra-3700378 (5054)] INFO : Application: My Application (Development)
+[2016-09-12 22:42:11 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing Sinatra instrumentation
+[2016-09-12 22:42:11 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-09-12 22:42:11 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-09-12 22:42:11 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-09-12 22:42:11 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing Net instrumentation
+[2016-09-12 22:42:11 +0000 armmaster17-cobra-3700378 (5054)] INFO : Finished instrumentation
+[2016-09-12 22:42:12 +0000 armmaster17-cobra-3700378 (5054)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1423473/applications/29352662
+[2016-09-12 22:42:15 +0000 armmaster17-cobra-3700378 (5054)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-09-12 22:42:15 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing Memcache instrumentation for dalli gem
+[2016-09-12 22:42:15 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing Redis Instrumentation
+[2016-09-12 22:42:15 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing deferred Puma::Rack::Builder instrumentation
+[2016-09-12 22:42:15 +0000 armmaster17-cobra-3700378 (5054)] INFO : Installing Puma::Rack::Builder middleware instrumentation
+[2016-09-12 22:42:40 +0000 armmaster17-cobra-3700378 (5057)] INFO : Starting Agent shutdown

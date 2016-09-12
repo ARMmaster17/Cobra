@@ -13,7 +13,6 @@ module Processor
         if data['type'].eql?("cobra.outbound.api.flow.raw")
             ApiFlowRaw.go(data['payload'])
         elsif data['type'].eql?("cobra.outbound.data.usage")
-            puts 3
             DataUsage.go(data['payload'])
         else
             # Do nothing, invalid command.

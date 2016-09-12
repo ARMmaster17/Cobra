@@ -16,24 +16,20 @@ module DataUsage
             # Site update
             data_site = Site.find_by(short_name: target[0])
             count = (Float(data_site.used_spaces) / Float(data_site.total_spaces)) * 100
-            puts "4-site"
         when 2
             # Zone update
             data_site = Site.find_by(short_name: target[0])
             data_zone = data_site.zones.find_by(short_name: target[1])
             count = (Float(data_zone.used_spaces) / Float(data_zone.total_spaces)) * 100
-            puts "4-zone"
         when 3
             # Lot update
             data_site = Site.find_by(short_name: target[0])
             data_zone = data_site.zones.find_by(short_name: target[1])
             data_lot = data_zone.lots.find_by(short_name: target[2])
             count = (Float(data_lot.used_spaces) / Float(data_lot.total_spaces)) * 100
-            puts "4-lot"
         else
             # Do nothing, unsupported options given.
         end
-        puts count
         data = Hash.new
         data['value'] = count.round(1)
         DataCache.set('usage', payload, data.to_json)

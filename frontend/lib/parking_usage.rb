@@ -7,31 +7,28 @@ require_relative '../../shared/lib/data_cache'
 module ParkingUsage
     def ParkingUsage.get_site(site)
         value = ParkingUsage.get(site)
-        #puts "BLBLBL" + value
         if value.nil?
             return 0
         else
-            return JSON.parse(value)['value']
+            return JSON.parse(value['value'])['value']
         end
     end
     def ParkingUsage.get_zone(site, zone)
         uri = "#{site}/#{zone}"
         value = ParkingUsage.get(uri)
-        #puts "BLBLBL" + value
         if value.nil?
             return 0
         else
-            return JSON.parse(value)['value']
+            return JSON.parse(value['value'])['value']
         end
     end
     def ParkingUsage.get_lot(site, zone, lot)
         uri = "#{site}/#{zone}/#{lot}"
         value = ParkingUsage.get(uri)
-        #puts "BLBLBL" + value
         if value.nil?
             return 0
         else
-            return JSON.parse(value)['value']
+            return JSON.parse(value['value'])['value']
         end
     end
     def ParkingUsage.get(uri)
@@ -39,7 +36,6 @@ module ParkingUsage
             puts 5
             Externaljob.send(uri, 'cobra.outbound.data.usage')
         end
-        puts uri
         return DataCache.get('usage', uri)
     end
 end
