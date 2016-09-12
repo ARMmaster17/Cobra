@@ -13,8 +13,9 @@ require_relative '../config/environments'
 require_relative '../shared/models/lot'
 require_relative '../shared/models/zone'
 require_relative '../shared/models/site'
-require_relative './lib/external_job.rb'
-require_relative './lib/api_key.rb'
+require_relative './lib/external_job'
+require_relative './lib/api_key'
+require_relative './lib/parking_usage'
 
 set :port, ENV['PORT'] || 8080
 set :bind, ENV['IP'] || '0.0.0.0'
@@ -25,6 +26,7 @@ use Rack::Flash
 
 Externaljob.init()
 ApiKey.init()
+DataCache.init()
 
 helpers do
     ##

@@ -20,6 +20,8 @@ GEM
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.0)
+    dalli (2.7.6)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.20160826)
@@ -139,6 +141,8 @@ DEPENDENCIES
   activerecord
   bunny
   codeclimate-test-reporter
+  connection_pool
+  dalli
   guard
   guard-rspec
   json

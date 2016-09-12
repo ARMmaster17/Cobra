@@ -23,5 +23,7 @@ gem 'guard-rspec'
 gem 'scrypt'
 gem 'redis'
 gem 'newrelic_rpm'
+gem 'dalli'
+gem 'connection_pool'
+# gem 'selenium-webdriver', group: :test
 gem 'codeclimate-test-reporter', group: :test, require: nil
-# gem 'selenium-webdriver'
