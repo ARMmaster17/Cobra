@@ -2,6 +2,8 @@
 .env
 # Ignore local copy of API keys
 .api.keys
+# Ignore NewRelic debug logs
+log/newrelic_agent.log
 
 *.gem
 *.rbc
