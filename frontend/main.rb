@@ -264,6 +264,7 @@ get '/data/:site/:zone' do
 end
 get '/data/:site/:zone/:lot' do
     @meta_name = params[:lot] + ' Lot'
+    @api_endpoint = "/api/v1/web/usage/#{params[:site]}/#{params[:zone]}/#{params[:lot]}"
     # Don't pass in any data. This will be handled by Angular through the API since this needs to be continiously updated.
     slim :status_lot
 end
@@ -314,15 +315,18 @@ get '/api/v1/flow/outbound/marked/:site/:zone/:lot/:vhid' do
 end
 ##
 # API endpoint for data display units to show data about a specified lot.
-get '/api/v1/display/usage/:site/:zone/:lot' do
-    if !ApiKey.auth(params[:id], params[:secret], 'r')
-        status 403
-        return "Not authorized"
-    end
+get '/api/v1/web/stats/:site/:zone/:lot' do
+    # No API key check since web requests don't transmit secured info.
     data_site = Site.find_by(short_name: params[:site])
     data_zone = data_site.zones.find_by(short_name: params[:zone])
     data_lot = data_zone.lots.find_by(short_name: params[:lot])
     return data_lot.to_json
+end
+get '/api/v1/web/usage/:site/:zone/:lot' do
+    # No API key check since web requests don't transmit secured info.
+    data = Hash.new
+    data['usage'] = ParkingUsage.get_lot(params[:site], params[:zone], params[:lot])
+    return data.to_json
 end
 ##
 # Catch-all 404 error handler

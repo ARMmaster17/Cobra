@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-app="data-view" ng-controller="refresh_control">
+            <h1>{{lot_name}}</h1>
+            <h4>{{percentage}}</h4>
+            <svg id="svg_donut" width="600" height="400"></svg>
+            <p>Updating in {{secs}} seconds.</p>
+            <p>For optimum performance, do not refresh this page.</p>
+        </div>
+        javascript:
+            function GetInjectedUsage() {
+                return GetUsage("#{@api_endpoint}");
+            }
+        <script src="/js/data/lot/active_data.js"></script>
+    </div>
+</div>
