@@ -4,7 +4,7 @@ require 'rack/test'
 
 set :environment, :test
 
-describe 'Server Service' do  
+describe 'Standard data view web service' do  
   include Rack::Test::Methods
 
   def app
