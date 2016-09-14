@@ -1,4 +1,5 @@
-require_relative '../backend/lib/data_usage.rb'  
+require_relative '../backend/lib/data_usage.rb'
+require_relative '../spec_helper.rb'
 require 'rspec'
 
 set :environment, :test
