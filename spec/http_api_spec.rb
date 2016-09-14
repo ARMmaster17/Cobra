@@ -1,5 +1,5 @@
 require_relative '../frontend/main.rb'
-require_relative '../spec_helper.rb'
+require_relative './spec_helper.rb'
 require 'rspec'  
 require 'rack/test'
 
