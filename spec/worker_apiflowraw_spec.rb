@@ -1,4 +1,5 @@
-require_relative '../backend/lib/api_flow_raw.rb'  
+require_relative '../backend/lib/api_flow_raw.rb'
+require_relative './spec_helper.rb'
 require 'rspec'
 require 'json'
 
