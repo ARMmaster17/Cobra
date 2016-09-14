@@ -265,7 +265,7 @@ end
 get '/data/:site/:zone/:lot' do
     @meta_name = params[:lot] + ' Lot'
     @api_endpoint = "/api/v1/web/usage/#{params[:site]}/#{params[:zone]}/#{params[:lot]}"
-    # Don't pass in any data. This will be handled by Angular through the API since this needs to be continiously updated.
+    # Don't pass in any data. This will be handled by Angular through the API since this needs to be updated in real time.
     slim :status_lot
 end
 ###################################################################
