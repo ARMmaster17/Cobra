@@ -1,21 +1,12 @@
-body {
-    background-color: black;
+#svg_donut {
+    display: block;
+    margin: auto;
 }
-p {
-    color: lightblue;
+#graph-backarc {
+    stroke: #000000;
+    fill: #000000;
 }
-h1, h2, h3 {
-    color: limegreen;
-}
-body {
-    background-color: black;
-}
-th {
-    background-color: limegreen;
-}
-tr:nth-child(even) {
-    background-color: black;
-}
-tr:nth-child(odd) {
-    background-color: gray;
+#graph-arc1 {
+    stroke: #000000;
+    fill: #e6e600;
 }
