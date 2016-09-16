@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+p {
+    color: lightblue;
+}
+h1, h2, h3 {
+    color: limegreen;
+}
+body {
+    background-color: black;
+}
+th {
+    background-color: limegreen;
+}
+tr:nth-child(even) {
+    background-color: black;
+}
+tr:nth-child(odd) {
+    background-color: gray;
+}
