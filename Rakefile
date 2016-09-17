@@ -2,8 +2,6 @@ require_relative 'frontend/main'
 require 'sinatra/activerecord/rake'
 require 'redis'
 require 'json'
-require 'selenium-webdriver'
-require 'sauce_whisk'
 
 task :test do
   ruby "testing/testall.rb"
