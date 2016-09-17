@@ -3,6 +3,7 @@ require 'sinatra/activerecord/rake'
 require 'redis'
 require 'json'
 require 'selenium-webdriver'
+require 'sauce_whisk'
 
 task :test do
   ruby "testing/testall.rb"
@@ -83,6 +84,7 @@ task :seleniumtest do
     caps['platformVersion'] = '5.1'
     caps['platformName'] = 'Android'
     caps['build'] = ENV['TRAVIS_BUILD_NUMBER']
+    caps['name'] = ENV['TRAVIS_BUILD_NUMBER']
     caps['tunnel-identifier'] = ENV['TRAVIS_JOB_NUMBER']
     driver = Selenium::WebDriver.for(:remote, {
         url: "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com/wd/hub",
@@ -93,5 +95,7 @@ task :seleniumtest do
     driver.get 'http://localhost:8080/data/fl'
     driver.get 'http://localhost:8080/data/fl/north'
     driver.get 'http://localhost:8080/data/fl/north/lot-a'
+    sessionid = driver.session_id
     driver.quit
+    SauceWhisk::Jobs.pass_job sessionid
 end

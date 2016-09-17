@@ -26,4 +26,5 @@ gem 'newrelic_rpm'
 gem 'dalli'
 gem 'connection_pool'
 gem 'selenium-webdriver', group: :test
+gem 'sauce_whisk', group: test
 gem 'codeclimate-test-reporter', group: :test, require: false
