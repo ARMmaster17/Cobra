@@ -74,18 +74,42 @@ task :seed do
 end
 
 task :seleniumtest do
-    caps = Selenium::WebDriver::Remote::Capabilities.android()
-    caps['appiumVersion'] = '1.5.3'
-    caps['recordVideo'] = false
-    caps['deviceName'] = 'Android Emulator'
-    caps['deviceType'] = 'phone'
-    caps['deviceOrientation'] = 'portrait'
-    caps['browserName'] = 'Browser'
-    caps['platformVersion'] = '5.1'
-    caps['platformName'] = 'Android'
-    caps['build'] = ENV['TRAVIS_BUILD_NUMBER']
-    caps['name'] = ENV['TRAVIS_BUILD_NUMBER']
-    caps['tunnel-identifier'] = ENV['TRAVIS_JOB_NUMBER']
+    caps1 = Selenium::WebDriver::Remote::Capabilities.android()
+    caps1['appiumVersion'] = '1.5.3'
+    caps1['recordVideo'] = false
+    caps1['deviceName'] = 'Android Emulator'
+    caps1['deviceType'] = 'phone'
+    caps1['deviceOrientation'] = 'portrait'
+    caps1['browserName'] = 'Browser'
+    caps1['platformVersion'] = '5.1'
+    caps1['platformName'] = 'Android'
+    caps1['build'] = ENV['TRAVIS_BUILD_NUMBER']
+    caps1['name'] = ENV['TRAVIS_BUILD_NUMBER'] + ".1"
+    caps1['tunnel-identifier'] = ENV['TRAVIS_JOB_NUMBER']
+    run_selenium_test(caps1)
+    caps2 = Selenium::WebDriver::Remote::Capabilities.iphone()
+    caps2['appiumVersion'] = '1.5.3'
+    caps2['recordVideo'] = false
+    caps2['deviceName'] = 'iPhone 6 Simulator'
+    caps2['deviceOrientation'] = 'portrait'
+    caps2['platformVersion'] = '9.3'
+    caps2['platformName'] = 'iOS'
+    caps2['browserName'] = 'Safari'
+    caps2['build'] = ENV['TRAVIS_BUILD_NUMBER']
+    caps2['name'] = ENV['TRAVIS_BUILD_NUMBER'] + ".2"
+    caps2['tunnel-identifier'] = ENV['TRAVIS_JOB_NUMBER']
+    run_selenium_test(caps2)
+    caps3 = Selenium::WebDriver::Remote::Capabilities.firefox()
+    caps3['platform'] = 'Windows 10'
+    caps3['version'] = '48.0'
+    caps3['recordVideo'] = false
+    caps3['build'] = ENV['TRAVIS_BUILD_NUMBER']
+    caps3['name'] = ENV['TRAVIS_BUILD_NUMBER'] + ".3"
+    caps3['tunnel-identifier'] = ENV['TRAVIS_JOB_NUMBER']
+    run_selenium_test(caps3)
+end
+
+def run_selenium_test(caps)
     driver = Selenium::WebDriver.for(:remote, {
         url: "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com/wd/hub",
         desired_capabilities: caps
