@@ -1,0 +1,12 @@
+#svg_donut {
+    display: block;
+    margin: auto;
+}
+#graph-backarc {
+    stroke: #000000;
+    fill: #000000;
+}
+#graph-arc1 {
+    stroke: #000000;
+    fill: #e6e600;
+}

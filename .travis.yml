@@ -3,11 +3,18 @@ cache: bundler
 addons:
   code_climate:
     repo_token: c4423709ed4e210ed3ea4330ad3275ba67b5734a3d9c73934440230a4dd67a9e
+  sauce_connect: true
+  apt:
+    sources:
+    - heroku
+    packages:
+    - heroku-toolbelt
 rvm:
 - 2.3.0
 env:
   global:
   - RACK_ENV=test
+  - PORT=8080
 branches:
   only:
   - master
@@ -24,6 +31,8 @@ before_script:
 - rake seed
 script:
 - rspec
+- heroku local &
+- rake seleniumtest
 deploy:
   provider: heroku
   api_key:
