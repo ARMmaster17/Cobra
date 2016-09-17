@@ -39,7 +39,7 @@ function UpdateView($scope, $interval) {
         .attr("d", arc)
         .attr("transform", "translate(100,100)")
         .attr("id", "graph-arc1");
-    $scope.percentage = "Usage: " + (prct * 100) + "%"
+    $scope.percentage = "Usage: " + Math.round(prct * 100) + "%"
 }
 
 function GetUsage(url) {

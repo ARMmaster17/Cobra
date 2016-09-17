@@ -3,11 +3,13 @@ cache: bundler
 addons:
   code_climate:
     repo_token: c4423709ed4e210ed3ea4330ad3275ba67b5734a3d9c73934440230a4dd67a9e
+  sauce_connect: true
 rvm:
 - 2.3.0
 env:
   global:
   - RACK_ENV=test
+  - PORT=8080
 branches:
   only:
   - master
@@ -18,12 +20,15 @@ services:
 - memcached
 install:
 - bundle install --jobs=3 --retry=3
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - rake db:migrate
 - rake seed
 script:
 - rspec
+- heroku local &
+- rake seleniumtest
 deploy:
   provider: heroku
   api_key:

@@ -16,6 +16,8 @@ GEM
     arel (7.1.2)
     bunny (2.5.1)
       amq-protocol (>= 2.0.1)
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
@@ -103,9 +105,14 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby_dep (1.4.0)
+    rubyzip (1.2.0)
     scrypt (3.0.3)
       ffi-compiler (>= 1.0.0)
       rake
+    selenium-webdriver (2.53.4)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     shellany (0.0.1)
     simplecov (0.12.0)
       docile (~> 1.1.0)
@@ -132,6 +139,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    websocket (1.2.3)
 
 PLATFORMS
   ruby
@@ -158,6 +166,7 @@ DEPENDENCIES
   rest-client
   rspec
   scrypt
+  selenium-webdriver
   sinatra
   sinatra-activerecord
   slim
@@ -166,4 +175,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.12.5
+   1.13.1
