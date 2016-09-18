@@ -32,7 +32,7 @@ module SauceDriver
       end
       caps['recordVideo'] = false
       caps['build'] = ENV['TRAVIS_BUILD_NUMBER']
-      caps['name'] = ENV['TRAVIS_BUILD_NUMBER'] + "." + ENV['TRAVIS_JOB_NUMBER']
+      caps['name'] = ENV['TRAVIS_JOB_NUMBER']
       caps['tunnel-identifier'] = ENV['TRAVIS_JOB_NUMBER']
       return caps
     end
