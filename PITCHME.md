@@ -8,7 +8,7 @@ Intelligent parking, powered by machine learning.
 
 ### The Problem
 
-Drivers spend large amounts of time circling decks and lots trying to find a spot.
+Drivers spend large amounts of time looking for a spot.
 
 - Wastes time of driver
 - Increases gas usage
@@ -16,6 +16,9 @@ Drivers spend large amounts of time circling decks and lots trying to find a spo
 
 #HSLIDE
 
-### Stuff
+### Introducing Cobra
 
-More stuff.
+- Tracks lot usage
+- Shows historical data
+- Can extrapolate data to future dates
+- Intelligently directs drivers to prevent congestion
