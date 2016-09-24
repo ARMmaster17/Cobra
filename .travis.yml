@@ -20,11 +20,9 @@ env:
   - TEST_PROFILE=ANDROID_51
   - TEST_PROFILE=IOS_IPHONE6_93
   - TEST_PROFILE=WINDOWS10_CHROME
-  - TEST_PROFILE=WINDOWS10_EDGE
 branches:
   only:
   - master
-  - dev
 services:
 - rabbitmq
 - redis-server
