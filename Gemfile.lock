@@ -16,6 +16,8 @@ GEM
     arel (7.1.2)
     bunny (2.5.1)
       amq-protocol (>= 2.0.1)
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.1)
@@ -55,9 +57,7 @@ GEM
       ruby_dep (~> 1.2)
     lumberjack (1.0.10)
     method_source (0.8.2)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types (2.99.3)
     minitest (5.9.0)
     nenv (0.3.0)
     netrc (0.11.0)
@@ -85,10 +85,10 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     redis (3.3.1)
-    rest-client (2.0.0)
+    rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -103,9 +103,17 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby_dep (1.4.0)
+    rubyzip (1.2.0)
+    sauce_whisk (0.0.21)
+      json (~> 1.8.1)
+      rest-client (~> 1.8.0)
     scrypt (3.0.3)
       ffi-compiler (>= 1.0.0)
       rake
+    selenium-webdriver (2.53.4)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     shellany (0.0.1)
     simplecov (0.12.0)
       docile (~> 1.1.0)
@@ -132,6 +140,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    websocket (1.2.3)
 
 PLATFORMS
   ruby
@@ -157,7 +166,9 @@ DEPENDENCIES
   redis
   rest-client
   rspec
+  sauce_whisk
   scrypt
+  selenium-webdriver
   sinatra
   sinatra-activerecord
   slim
@@ -166,4 +177,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.12.5
+   1.13.1
