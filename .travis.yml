@@ -32,7 +32,7 @@ install:
 before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - rake db:migrate
-- rake seed
+- rake db:seed
 script:
 - heroku local &
 - rspec

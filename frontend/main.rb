@@ -322,10 +322,21 @@ get '/api/v1/web/stats/:site/:zone/:lot' do
     data_lot = data_zone.lots.find_by(short_name: params[:lot])
     return data_lot.to_json
 end
+##
+# API endpoint for data display units to show graph containing lot usage.
 get '/api/v1/web/usage/:site/:zone/:lot' do
     # No API key check since web requests don't transmit secured info.
     data = Hash.new
     data['usage'] = ParkingUsage.get_lot(params[:site], params[:zone], params[:lot])
+    return data.to_json
+end
+##
+# API endpoint for data display units to show historical lot usage including
+# extrapolated data points for specified lot.
+get '/api/v1/web/history/:site/:zone/:lot' do
+    # No API key check since web requests don't transmit secured info.
+    data = Hash.new
+    # TODO: Get all data points from the past 4 hours plus two extrapolated data points.
     return data.to_json
 end
 ##
