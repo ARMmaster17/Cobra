@@ -7,3 +7,6 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/57c9a512968d640039516e65/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57c9a512968d640039516e65)
 
 Efficient parking solutions, brought to you by Machine Learning.
+
+# Tests
+[![Build Status](https://saucelabs.com/browser-matrix/ARMmaster17.svg)](https://saucelabs.com/beta/builds/839dce944887465bb995c5b88d7c5299)
