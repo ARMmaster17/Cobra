@@ -58,7 +58,7 @@ GEM
     lumberjack (1.0.10)
     method_source (0.8.2)
     mime-types (2.99.3)
-    minitest (5.9.0)
+    minitest (5.9.1)
     nenv (0.3.0)
     netrc (0.11.0)
     newrelic_rpm (3.16.2.321)
