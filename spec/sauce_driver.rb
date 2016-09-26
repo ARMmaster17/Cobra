@@ -29,6 +29,16 @@ module SauceDriver
         caps['platformVersion'] = '9.3'
         caps['platformName'] = 'iOS'
         caps['browserName'] = 'Safari'
+      elsif ENV['TEST_PROFILE'].eql?('WINDOWS10_CHROME')
+        caps = Selenium::WebDriver::Remote::Capabilities.chrome()
+        caps['platform'] = 'Windows 10'
+        caps['version'] = '53.0'
+        caps['screenResolution'] = '1920x1080'
+      elsif ENV['TEST_PROFILE'].eql?('WINDOWS10_EDGE')
+        caps = Selenium::WebDriver::Remote::Capabilities.edge()
+        caps['platform'] = 'Windows 10'
+        caps['version'] = '13.10586'
+        caps['screenResolution'] = '1920x1080'
       end
       caps['recordVideo'] = false
       caps['build'] = ENV['TRAVIS_BUILD_NUMBER']
