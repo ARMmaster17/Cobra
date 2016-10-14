@@ -110,7 +110,7 @@ GEM
     scrypt (3.0.3)
       ffi-compiler (>= 1.0.0)
       rake
-    selenium-webdriver (2.53.4)
+    selenium-webdriver (3.0.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
